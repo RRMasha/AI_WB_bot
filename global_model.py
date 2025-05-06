@@ -103,7 +103,7 @@ def train_global_model():
 
     # ОБЯЗАТЕЛЬНО передаем fit=True для обучения кодировщика
     X_train_combined = prepare_subcategory_features(
-        X_train, y_train, category_encoder, fit=True  # <- Вот ключевое изменение!
+        X_train, y_train, category_encoder, fit=True  
     )
     X_test_combined = prepare_subcategory_features(
         X_test, y_test, category_encoder, fit=False
