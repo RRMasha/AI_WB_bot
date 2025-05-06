@@ -189,31 +189,7 @@ class RecommendationEngine:
                 print(f"Ошибка при обработке категории {cat}: {str(e)}")
                 continue
 
-            '''
-            # Топ-3 подкатегории
-            # Находим индекс категории через np.where
-            cat_code = np.where(encoders['category'] == cat)[0][0]
-            X_combined = np.hstack([
-                X.values,
-                model['category_encoder'].transform([[cat_code]])
-            ])
 
-            subcat_probas = model['subcategory'].predict_proba(X_combined)[0]
-            top_subcats = [
-                (encoders['subcategory'][i], prob)
-                for i, prob in sorted(enumerate(subcat_probas), key=lambda x: x[1], reverse=True)[:3]
-            ]
-
-            recommendations.append({
-                'category': cat,
-                'category_prob': float(cat_prob),
-                'subcategories': [
-                    {'name': subcat, 'probability': float(prob)}
-                    for subcat, prob in top_subcats
-                ]
-            })
-
-            '''
 
         return {
             'status': 'success',
