@@ -307,7 +307,7 @@ def pars_data(user_id):
                     driver.execute_script("arguments[0].click();", title_link)
                     time.sleep(2)
 
-                    # 3. Собираем хлебные крошки (категории)
+                    # 3. Собираем категории
                     breadcrumbs = driver.find_elements(
                         By.XPATH, "//ul[contains(@class, 'breadcrumbs__list')]/li[position()>1]//span")
 
