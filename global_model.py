@@ -74,7 +74,7 @@ def train_global_model():
     # 4. Разделение данных
     X = data[['День недели_номер', 'Сезон_код', 'Праздник_код']]
     y_category = data['Категория_код']
-    # Исправлено: было 'Доп.категория_код'
+    # 
     y_subcategory = data['Доп.категория_код']
 
     X_train, X_test, y_train, y_test = train_test_split(
